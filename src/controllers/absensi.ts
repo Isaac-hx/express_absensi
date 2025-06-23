@@ -61,7 +61,7 @@ export const createAbsensi = async(req,res )=>{
         }
         const new_id = generateIntegerID(100000000,900000000)
         const {karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} = req.body
-        const [row] =await pool.query('SELECT id FROM karyawan WHERE id = ?',[karyawan_id])
+        const [row] =await pool.query('SELECT name FROM karyawan WHERE id = ?',[karyawan_id])
         if(row.length === 0){
             throw new Error("Karyawan_id not found")
         }
@@ -91,7 +91,7 @@ export const createAbsensi = async(req,res )=>{
         check_out || null,
       ]
     );
-    res.status(201).json({ message: "Success absensi", data: {name:karyawan_name,new_id,karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} });
+    res.status(201).json({ message: "Success absensi", data: {karyawan_name,new_id,karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} });
 
     }catch (e) {
          console.error("Error creating absensi:", e);
