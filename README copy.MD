@@ -102,7 +102,7 @@ All endpoints support optional query parameters for pagination:
 - `order` (ASC/DESC): sort data by ASC or DESC
 
 ---
-BASE_URL= http://localhost:3000/
+BASE_URL= https://express-absensi.vercel.app
 
 ## **Absensi Endpoints**
 

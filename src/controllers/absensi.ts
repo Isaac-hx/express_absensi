@@ -65,6 +65,7 @@ export const createAbsensi = async(req,res )=>{
         if(row.length === 0){
             throw new Error("Karyawan_id not found")
         }
+        const karyawan_name = row[0].name
 
  const [insertResult] = await pool.query(
       `INSERT INTO absensi (
@@ -90,7 +91,7 @@ export const createAbsensi = async(req,res )=>{
         check_out || null,
       ]
     );
-    res.status(201).json({ message: "Success absensi", data: {new_id,karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} });
+    res.status(201).json({ message: "Success absensi", data: {karyawan_name,new_id,karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} });
 
     }catch (e) {
          console.error("Error creating absensi:", e);
