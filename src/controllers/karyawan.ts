@@ -133,7 +133,6 @@ export const editKaryawanById = async (req, res) => {
         }
 
         let { id } = req.params;
-        id = parseInt(id, 10);
         const { name, no_telp, gender,email } = req.body;
 
         // Update fields only if provided

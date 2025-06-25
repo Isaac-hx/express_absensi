@@ -168,7 +168,8 @@ export const editUsersById = async (req, res) => {
             return res.status(400).json({ message: "Validation errors", errors: errors.array() });
         }
 
-        const { id } = req.params;
+        const  id  = parseInt(req.params,10);
+
         const { username,password,status } = req.body;
 
         // Update fields only if provided
