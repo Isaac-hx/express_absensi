@@ -132,7 +132,8 @@ export const editKaryawanById = async (req, res) => {
             return res.status(400).json({ message: "Validation errors", errors: errors.array() });
         }
 
-        const { id } = req.params;
+        let { id } = req.params;
+        id = parseInt(id, 10);
         const { name, no_telp, gender,email } = req.body;
 
         // Update fields only if provided
