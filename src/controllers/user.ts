@@ -170,12 +170,11 @@ export const editUsersById = async (req, res) => {
 
         const  id  = parseInt(req.params,10);
 
-        const { username,password,status } = req.body;
+        const { username,status } = req.body;
 
         // Update fields only if provided
         const fieldsToUpdate = {};
         if (username) fieldsToUpdate.username = username;
-        if (password) fieldsToUpdate.password = password;
         if (status) fieldsToUpdate.status = status;
 
         const [updateResult] = await pool.query(
