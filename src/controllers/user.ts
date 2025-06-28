@@ -106,7 +106,7 @@ export const login = async (req, res) => {
         const token = generateAccessToken({ id: user.id, username: user.username });
         res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Path=/; Max-Age=3600;`);
 
-        res.status(200).json({ message: "Login sucessful", token:token });
+        res.status(200).json({ message: "Login sucessful", token:token,username:user.username });
     } catch (e) {
         res.status(500).json({ message: "Error creating user", error: e.message });
     }
