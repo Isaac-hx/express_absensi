@@ -91,7 +91,7 @@ export const createAbsensi = async(req,res )=>{
         check_out || null,
       ]
     );
-    res.status(201).json({ message: "Success absensi", data: {karyawan_name,new_id,karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} });
+    res.status(201).json({ message: "Success absensi", data: {name:karyawan_name,new_id,karyawan_id,location,url_profile,url_signature,target_work,result_work,check_in,check_out} });
 
     }catch (e) {
          console.error("Error creating absensi:", e);
