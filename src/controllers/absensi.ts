@@ -118,7 +118,7 @@ export const getAbsensiById = async(req,res)=>{
             return res.status(404).json({ message: `Absensi with ID ${id} not found` });
         }
 
-        res.json(rows[0])
+        res.json({data:rows[0]})
     }catch(e){
         res.status(500).json({message:"Error fetching data",e})
     }}
